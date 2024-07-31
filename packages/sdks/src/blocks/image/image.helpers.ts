@@ -53,6 +53,7 @@ export function getSrcSet(url: string): string {
     const widthInSrc = Number(url.split('?width=')[1]);
     if (!isNaN(widthInSrc)) {
       srcUrl = `${srcUrl} ${widthInSrc}w`;
+      sizes = sizes.filter(x => x < widthInSrc);
     }
 
     return sizes
